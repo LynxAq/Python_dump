@@ -1,0 +1,7 @@
+import re
+
+def usun_nawias(string):
+    string = re.sub(r'\([^()]*\)', '', string)
+    return string
+
+print(usun_nawias('Ala ma kota (perskiego)'))
