@@ -1,0 +1,7 @@
+import numpy
+
+def randperm(n,k):
+    for e in range(k):
+        print(numpy.random.permutation(n))
+
+randperm(100,5)
