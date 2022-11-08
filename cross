@@ -1,0 +1,36 @@
+import turtle
+
+
+t = turtle.Turtle()
+
+t.penup()
+t.setposition(0,60)
+t.pendown()
+x = t.setposition
+def krzyzyk(s):
+    t.right(45)
+    t.forward(s)
+    t.right(90)
+    t.forward(s/2)
+    t.right(90)
+    t.forward(s)
+    t.left(90)
+    t.forward(s)
+    t.right(90)
+    t.forward(s/2)
+    t.right(90)
+    t.forward(s)
+    t.left(90)
+    t.forward(s)
+    t.right(90)
+    t.forward(s/2)
+    t.right(90)
+    t.forward(s)
+    t.left(90)
+    t.forward(s)
+    t.right(90)
+    t.forward(s/2)
+    t.right(90)
+    t.forward(s)
+
+krzyzyk(30)
