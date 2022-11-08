@@ -1,0 +1,103 @@
+import turtle
+import numpy as np
+t = turtle.Turtle()
+s = 10
+t.speed('fastest')
+s = 10
+
+def squarelight(s):
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    t.begin_fill()
+    for i in range(4):
+        t.forward(s)
+        t.right(90)
+    t.end_fill()
+
+
+def block_light(s):
+    for x in range(5):
+        squarelight(s)
+        t.penup()
+        t.forward(s)
+        t.pendown()
+    t.penup()
+    t.right(90)
+    t.forward(s)
+    t.pendown()
+    t.right(90)
+    t.penup()
+    t.forward(5 * s)
+    t.pendown()
+    t.left(180)
+
+def square_light(s):
+    for x in range(5):
+        block_light(s)
+    move(s)
+
+
+def squaredark(s):
+    colour = np.random.rand(1, 3)
+    colour = 0.395 * colour
+    t.color(colour)
+    t.begin_fill()
+    for i in range(4):
+        t.forward(s)
+        t.right(90)
+    t.end_fill()
+
+def block_dark(s):
+    for x in range(5):
+        squaredark(s)
+        t.penup()
+        t.forward(s)
+        t.pendown()
+    t.penup()
+    t.right(90)
+    t.forward(s)
+    t.pendown()
+    t.right(90)
+    t.penup()
+    t.forward(5 * s)
+    t.pendown()
+    t.left(180)
+
+def square_dark(s):
+    for x in range(5):
+        block_dark(s)
+    move(s)
+
+
+def move(s):
+    t.penup()
+    t.forward(5 * s)
+    t.left(90)
+    t.forward(5 * s)
+    t.right(90)
+    t.pendown()
+
+def move_between_rows():
+    t.penup()
+    t.right(90)
+    t.forward(50)
+    t.right(90)
+    t.forward(200)
+    t.right(180)
+    t.pendown()
+
+
+def square_half():
+    for y in range(2):
+        square_light(10)
+        square_dark(10)
+    move_between_rows()
+    for z in range(2):
+        square_dark(10)
+        square_light(10)
+    move_between_rows()
+
+for a in range(2):
+    square_half()
+
+input()
