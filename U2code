@@ -1,0 +1,89 @@
+#wejscie - liczba binarna
+#wyjscie - liczba w kodzie U2 na x bitach
+
+
+def binary_number(a): # BINARY NUMBERS FOR POSITIVE INTEGERS
+    result = ''
+    while a > 0:
+        if a % 2 == 0:
+            result = '0' + result
+        else:
+            result = '1' + result
+        a = a//2
+    return result
+
+
+def bit_checker(result,k):
+    if result[0] == '0':
+        length_of_result = len(result)
+        if length_of_result > k:
+            print("Binary number couldn't be created because the number of bits is insufficient :)")
+        elif length_of_result == k:
+            print(result)
+        elif length_of_result < k:
+            result = result.zfill(k)
+            print(result)
+    elif result[0] == '1':
+        length_of_result = len(result)
+        if length_of_result > k:
+            print("Binary number couldn't be created because the number of bits is insufficient :)")
+        elif length_of_result == k:
+            print(result)
+        elif length_of_result < k:
+            result = (k - length_of_result) * '1' + result
+            print(result)
+
+
+
+def binary_number_u2(a):
+    b = -a
+    result = ''
+    while b > 0:
+        if b % 2 == 0:
+            result = '0' + result
+        else:
+            result = '1' + result
+        b = b // 2
+    zero = result.zfill(len(result)+1)
+    print(zero)
+    result2 = ''
+    for y in range(0,len(zero)):
+        if zero[y] == '0':
+            result2 = '1' + result2
+        else:
+            result2 = '0' + result2
+    result2 = result2[::-1]
+    return result2
+
+
+def number_adder(a,b):
+    max_len = max(len(a),len(b))
+    a=a.zfill(max_len+1)
+    b=b.zfill(max_len+1)
+    result=' '
+    carry=0
+    for i in range(max_len, -1, -1): # -1boideodtyłu
+        r = carry
+        r += 1 if a[i]== '1' else 0
+        r += 1 if b[i]== '1' else 0
+        result = ('1'if r % 2 == 1 else '0') + result
+        carry = 0 if r < 2 else 1
+        if carry != 0:
+            r = r + 1
+    while result[0] == '0':
+        result = result[1::]
+    return result
+
+def KOD_U2(a,k):
+    if a > 0:
+        result = binary_number(a)
+        bit_checker(result,k)
+    else:
+        x = binary_number_u2(a)
+        print(x)
+        x = str(x)
+        result = number_adder(x,'1')
+        print(result)
+        bit_checker(result,k)
+
+KOD_U2(-29,10)
