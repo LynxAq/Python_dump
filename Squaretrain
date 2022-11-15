@@ -1,0 +1,40 @@
+import turtle
+import numpy as np
+
+
+t = turtle.Turtle()
+t.speed('fastest')
+colour1 = np.array([1, 1, 0.5])   # red green blue 1, 1, 0,5 --> 1, 0, 1
+colour2 = np.array([0, -0.1, 0.05])
+def square():
+    t.begin_fill()
+    for i in range(4):
+        t.forward(15)
+        t.right(90)
+    t.end_fill()
+
+def for_loopie(n):
+    for e in range(n):
+        square()
+        t.forward(15)
+
+def move():
+    t.right(90)
+    t.forward(15)
+
+
+n = 2
+x = 0
+mieszanka = colour1 + colour2 * x
+t.color(mieszanka)
+for_loopie(2)
+move()
+for i in range(17):
+    x = x + 0.5
+    mieszanka = colour1 + colour2 * x
+    t.color(mieszanka)
+    for_loopie(n)
+    move()
+    n = n + 1
+
+turtle.exitonclick()
