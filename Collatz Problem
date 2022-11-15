@@ -1,0 +1,36 @@
+def Collatz_problem(n):
+    #print(n)
+    amount = 0
+    while n != 1:
+        if n % 2 == 0:
+            n = n//2
+            amount += 1
+        else:
+            n = 3*n + 1
+            amount += 1
+    return amount
+
+
+def Collatz_analysis(a,b):
+    energia = []
+    do_sredniej = 0
+    for i in range(a,b+1):
+        energia.append(Collatz_problem(i))
+    div = (b+1 -a)
+    for e in range(len(energia)):
+        do_sredniej += energia[e]
+    srednia = do_sredniej / div
+    energia.sort()
+    #print(energia)
+    if div % 2 == 1:
+        x = div // 2
+        print('Mediana to', energia[x])
+    else:
+        x1 = div//2 - 1
+        x2 = x1 + 1
+        print('Mediana to', ((energia[x1]+energia[x2])/2))
+    print('Maksymalna energia to', max(energia))
+    print('Minimalna energia to:', min(energia))
+    print('Średnia to:', srednia)
+
+Collatz_analysis(7,190)
