@@ -1,0 +1,363 @@
+import turtle
+import numpy as np
+import time
+t = turtle.Turtle()
+
+def square():
+    t.begin_fill()
+    for i in range(4):
+        t.forward(15)
+        t.right(90)
+    t.end_fill()
+
+
+def zero():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    square()
+    for i in range(2):
+        t.fd(15)
+        square()
+    t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    for x in range(3):
+        square()
+        t.right(90)
+        t.fd(15)
+        t.left(90)
+    t.backward(45)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.penup()
+    t.backward(45)
+    t.left(90)
+    t.fd(45)
+    t.left(90)
+    t.forward(15)
+    t.right(180)
+    t.pendown()
+    for x in range(3):
+        square()
+        t.right(90)
+        t.fd(15)
+        t.left(90)
+    t.penup()
+
+def one():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    square()
+    t.fd(15)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    for i in range(5):
+        square()
+        t.right(90)
+        t.fd(15)
+        t.left(90)
+    t.fd(15)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    square()
+    t.backward(30)
+    square()
+    t.penup()
+
+def two():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    square()
+    t.fd(15)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.penup()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(30)
+    t.pendown()
+    square()
+    t.fd(15)
+    square()
+    t.backward(15)
+    t.right(90)
+    t.forward(15)
+    t.left(90)
+    t.backward(15)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(15)
+    for i in range(5):
+        square()
+        t.fd(15)
+    t.penup()
+
+def three():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(45)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(60)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.penup()
+
+def four():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(15)
+    square()
+    t.right(90)
+    t.forward(15)
+    t.left(90)
+    for i in range(5):
+        square()
+        t.fd(15)
+    t.backward(45)
+    t.right(90)
+    t.forward(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.penup()
+
+def five():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    for i in range(5):
+        square()
+        t.fd(15)
+    t.backward(75)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(60)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.penup()
+
+def six():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    square()
+    t.fd(15)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.penup()
+    t.right(90)
+    t.fd(30)
+    t.left(90)
+    t.backward(60)
+    t.pendown()
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(60)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.backward(60)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    square()
+    t.penup()
+
+def seven():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    for i in range(5):
+        square()
+        t.fd(15)
+    t.backward(30)
+    t.right(90)
+    t.forward(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(30)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.backward(45)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(15)
+    square()
+    t.penup()
+
+def eight():
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(45)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.backward(60)
+    t.left(90)
+    t.fd(15)
+    t.right(90)
+    square()
+    t.penup()
+    t.right(90)
+    t.fd(30)
+    t.left(90)
+    t.pendown()
+    square()
+    t.penup()
+    t.forward(60)
+    t.pendown()
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(45)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.penup()
+
+def nine():
+    colour = np.random.rand(1, 3)
+    t.color(colour)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    square()
+    t.penup()
+    t.backward(60)
+    t.pendown()
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.fd(15)
+    for i in range(4):
+        square()
+        t.fd(15)
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(15)
+    square()
+    t.right(90)
+    t.fd(15)
+    t.left(90)
+    t.backward(45)
+    for i in range(3):
+        square()
+        t.fd(15)
+    t.penup()
+
+cyfry = { '0': zero,
+          '1' : one,
+          '2' : two,
+          '3' : three,
+          '4' : four,
+          '5' : five,
+          '6' : six,
+          '7' : seven,
+          '8' : eight,
+          '9' : nine}
+
+a = input()
+
+count = 0
+y = 0
+for e in a:
+    t.setposition(count,y)
+    t.pendown()
+    cyfry[e]()
+    count += 80
+
+
+
+print(a)
+
+turtle.exitonclick()
