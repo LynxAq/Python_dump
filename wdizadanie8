@@ -1,0 +1,19 @@
+def checker(m,n):
+    zero_list = [0,0,0,0,0,0,0,0,0,0]
+    zero_list2 = [0,0,0,0,0,0,0,0,0,0] # lista od 0 - 9
+    
+    for x in range(0,len(n)):
+        zero_list[int(n[x])] = zero_list[int(n[x])] + 1
+    for y in range(0,len(m)):
+        zero_list2[int(m[y])] = zero_list2[int(m[y])] + 1
+    for z in range(len(zero_list)):
+        if zero_list[z] == zero_list2[z]:
+            pass
+            if z == (len(zero_list) - 1):
+                print('Numbers are the same')
+        else:
+            print("Numbers aren't the same")
+            break
+
+
+checker('12344','24143')
