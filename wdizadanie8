@@ -17,3 +17,17 @@ def checker(m,n):
 
 
 checker('12344','24143')
+
+def cyfrowosc_checker(n):
+    jedno = n[0]
+    cyfrowosc = 0
+    for x in range(len(n)):
+        if x == 0:
+            cyfrowosc = 1
+        elif n[x] != jedno:
+            cyfrowosc += 1
+            jedno = n[x]
+    return cyfrowosc
+
+
+print(cyfrowosc_checker('122334'))
