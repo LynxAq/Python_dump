@@ -1,0 +1,67 @@
+import turtle
+import numpy as np
+
+t = turtle.Turtle()
+turtle.tracer(n=100, delay=0)
+
+
+def square():
+    t.pencolor('black')
+    t.begin_fill()
+    for i in range(4):
+        t.forward(10)
+        t.right(90)
+    t.end_fill()
+x = -120
+with open('niespodzianka.txt', 'r') as f:
+    for line in f:
+        list = line.split()
+        t.penup()
+        t.setposition(x,140)
+        t.pendown()
+        for colour in list:
+            kolor = np.array(eval(colour)) /255
+            t.color(kolor)
+            square()
+            t.right(90)
+            t.fd(10)
+            t.left(90)
+        x = x + 10
+
+turtle.exitonclick()
+
+# ZADANIE 3 LISTA 6
+import math
+import re
+
+
+def dividers(number):
+    dividers = []
+    for a in range(1, number+ 1):
+        if (number % a) == 0:
+            dividers.append(a)
+    return dividers
+
+
+div = dividers(55)
+print(div)
+def prime_number_checker(div):
+    notprime = []
+    for i in div:
+        i = int(i)
+        for x in range(2,int(math.sqrt(i) + 1)):
+            if (i % x) == 0:
+                notprime.append(i)
+                break
+
+    return notprime
+
+nie = prime_number_checker(div)
+
+primes = [x for x in div if x not in nie]
+print(primes)
+
+# ZADANIE 4 LISTA 6
+s = ' Ala ma kota '
+split = re.findall(r'\S+', s) #/S character ktory nie jest spacja, + znajdz wiecej znakow w ciagu
+print(split)
