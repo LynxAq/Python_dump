@@ -65,3 +65,26 @@ print(primes)
 s = ' Ala ma kota '
 split = re.findall(r'\S+', s) #/S character ktory nie jest spacja, + znajdz wiecej znakow w ciagu
 print(split)
+
+import re
+
+print(type(re.search(r"[ąćęłńóśźż]", "zajmował")))
+
+slowa_z_lalki = set(open('lalka-tom-pierwszy.txt', encoding='utf8').read().split())
+litery = set('abcdefghijklmnopqrstuwxyz ,.?!""-\n')
+polskie_slowa = set('ąćęłńóśźż')
+polski = []
+string_slow = ''
+for word in slowa_z_lalki:
+    if re.search(r'[ąćęłńóśźż]', word) == None:
+        string_slow = string_slow + ' ' + word
+    else:
+        #print(string_slow)
+        polski.append(string_slow)
+        string_slow = ''
+
+rekordowy = ''
+for i in polski:
+    if len(i) > len(rekordowy):
+        print(i)
+        rekordowy = i
